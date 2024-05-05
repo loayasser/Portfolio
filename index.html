@@ -3,39 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
 </head>
 <body>
-    <h1>Loay Berzan</h1>
-    <img src="./IMG_4222.jpg" height="200" alt="Profile Picture"/>
-                <hr />
-    <h3>Summary</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        mes ac turpis egestas. Nulla quis ex nec odio ultricies mollis quis mod metus.</p>
-                <hr />
-    <h3>Education</h3>
-        <ul>
-            <li> Bachelor's of Engineering in Electrical & Electronics - Xiamen University | 2018 ~ 2023</li>
-        </ul>
-                <hr />
-    <h3>Work Experience</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. mes ac turpis egestas. 
-        Nulla quis ex nec odio ultricies mollis quis mod metus.</p>
-                <hr />
-    <h3>Skills</h3>
-        <ul>
-            <li>Office</li>
-            <li>Management</li>
-        </ul>
-                <hr />
-    <h3>Awards and Certifications</h3>
-        <ul>
-            <li>CCNA | August 2023</li>
-        </ul>
-                <hr />
-    <a href="./contact.html">Contact Details</a>
+    <header>
+        <a href="#" class="logo">Loay</a>
+        <nav class="navigation">
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="main">
+        <div>
+            <h2>Hello, I'm Loay <br> <span >Web Developer</span></h2>
+            <h3>I build websites</h3>
+            <a href="#projects" class="main-btn">View my work</a>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards" id="services">
+        <h2 class="title">Services</h2>
+        <div class="content">
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <div class="info">
+                    <h3>Developer</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat tristique libero, ac imperdiet dolor finibus at. Sed eget faucibus nunc, vitae eleifend magna. Phasellus consequat sagittis nunc a gravida. Morbi a venenatis tortor, eu mollis elit. Ut nibh diam, dictum quis quam a, mollis porta orci. Nullam ornare tempor imperdiet. Duis porttitor nec dolor ac mattis.ces, vel gravida sapien laoreet.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <div class="info">
+                    <h3>Developer</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat tristique libero, ac imperdiet dolor finibus at. Sed eget faucibus nunc, vitae eleifend magna. Phasellus consequat sagittis nunc a gravida. Morbi a venenatis tortor, eu mollis elit. Ut nibh diam, dictum quis quam a, mollis porta orci. Nullam ornare tempor imperdiet. Duis porttitor nec dolor ac mattis.ces, vel gravida sapien laoreet.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <div class="info">
+                    <h3>Developer</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat tristique libero, ac imperdiet dolor finibus at. Sed eget faucibus nunc, vitae eleifend magna. Phasellus consequat sagittis nunc a gravida. Morbi a venenatis tortor, eu mollis elit. Ut nibh diam, dictum quis quam a, mollis porta orci. Nullam ornare tempor imperdiet. Duis porttitor nec dolor ac mattis.ces, vel gravida sapien laoreet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2 class="title">Projects</h2>
+        <div class="content">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/tiger-jpg.jpg" alt="">
+                </div>
+                <div class="project-info">
+                    <p class="project-category">Project 1</p>
+                    <strong class="project-title">
+                        <span>Dev Books</span>
+                        <a href="#" class="more-details">More Details</a>
+                    </strong>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/tiger-jpg.jpg" alt="">
+                </div>
+                <div class="project-info">
+                    <p class="project-category">Project 1</p>
+                    <strong class="project-title">
+                        <span>Dev Books</span>
+                        <a href="#" class="more-details">More Details</a>
+                    </strong>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/tiger-jpg.jpg" alt="">
+                </div>
+                <div class="project-info">
+                    <p class="project-category">Project 1</p>
+                    <strong class="project-title">
+                        <span>Dev Books</span>
+                        <a href="#" class="more-details">More Details</a>
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards contact" id="contact">
+        <h2 class="title">Let's Work Together</h2>
+        <div class="content">
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div class="info">
+                    <h3>Email</h3>
+                    <p>loay.berzan@gmail.com</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="info">
+                    <h3>Phone Number:</h3>
+                    <p>+97477639080</p>
+            </div>
+        </div>
+    </section>
+    
     <footer>
-        <p>© Loay Berzan. All rights reserved</p>
+        <p class="footer-title">Copyrights @ <span>Loay Berzan</span></p>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
     </footer>
+    <!-- <div>
+        <h1>Hello, I am Loay</h1>
+        <p>I am a Junior Web Developer who have experince in developing for 6 months with a passion for web development tools. I aspire toward a career that will allow me to channel my creativity through crafting beautiful software and engaging experiences.</p>
+    </div>
+    <div>
+        <h2>WHAT I DO</h2>
+            <div>
+                <h3>Design</h3>
+                <p>lorem apsum</p>
+            </div>
+            <div>
+                <h3>Development</h3>
+                <p>lorem apsum</p>
+            </div>
+    </div>
+    <div>
+        <h2>Experience</h2>
+        <p>lorem apsum</p>
+    </div>
+    <div>
+        <h2>Get in Touch</h2>
+        <a href="/contact.html">Contact me</a>
+    </div> -->
+    
+
 </body>
 </html>
