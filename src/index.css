@@ -1,0 +1,302 @@
+/* 1. IMPORT GOOGLE FONT (Crucial for modern look) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+/* 2. THEME VARIABLES */
+:root {
+  /* Light Mode Colors */
+  --bg-primary: #f8f9fa;       /* Light Grey (Not pure white) */
+  --bg-secondary: #ffffff;     /* Pure White for cards/sections */
+  --text-primary: #2d3748;     /* Dark Grey (Softer than black) */
+  --text-secondary: #718096;   /* Muted Grey */
+  --accent-color: #6366f1;     /* Indigo/Purple for a modern feel */
+  --accent-hover: #4f46e5;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --border-radius: 12px;
+}
+
+body.dark {
+  /* Dark Mode Colors */
+  --bg-primary: #0f172a;       /* Deep Navy/Black */
+  --bg-secondary: #1e293b;     /* Lighter Navy for cards */
+  --text-primary: #f1f5f9;     /* Off-white */
+  --text-secondary: #94a3b8;   /* Light Grey */
+  --accent-color: #38bdf8;     /* Cyan/Blue (Neon feel) */
+  --accent-hover: #0ea5e9;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+/* 3. GLOBAL RESET & BASE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* Applies the modern font */
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* 4. HEADER & NAV (Glassmorphism Effect) */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent */
+  backdrop-filter: blur(10px); /* The "Blur" effect behind the nav */
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+body.dark .header {
+  background-color: rgba(15, 23, 42, 0.8);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  letter-spacing: -0.5px;
+}
+
+.navbar a {
+  margin-left: 2rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: var(--accent-color);
+}
+
+.theme-toggle-btn {
+  background: transparent;
+  border: 2px solid var(--text-secondary);
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* 5. SECTIONS & LAYOUT */
+.section {
+  padding: 5rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+  position: relative;
+}
+
+/* Add a small underline to H2 */
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-color);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* 6. HERO SECTION (Centered & Big) */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.hero h3 {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.hero .accent-text {
+  color: var(--accent-color);
+}
+
+/* Hero Buttons */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.cta-button {
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button.primary {
+  background: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.39);
+}
+
+.cta-button.primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+  border: 2px solid var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.cta-button.secondary:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+/* 7. SKILLS (Tags Look) */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.skill-group {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.skill-group h3 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.skill-group ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  color: var(--text-secondary);
+}
+
+/* 8. PORTFOLIO (Cards with Hover) */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.project-card {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-10px); /* Lifts up on hover */
+}
+
+.project-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.project-description {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.tech-tag {
+  display: inline-block;
+  background: rgba(99, 102, 241, 0.1); /* Light transparent background */
+  color: var(--accent-color);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.project-links {
+  margin-top: auto; /* Pushes links to bottom */
+  display: flex;
+  gap: 1rem;
+}
+
+.link-button {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.link-button:hover {
+  color: var(--accent-color);
+}
+
+/* 9. CONTACT */
+.contact-links-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  background: var(--bg-secondary);
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  background: var(--accent-color);
+  color: #fff;
+  transform: translateY(-5px);
+}
