@@ -1,5 +1,4 @@
 import React from 'react';
-// import './About.css'; // For component-specific styles
 
 const About = () => {
   return (
@@ -8,17 +7,32 @@ const About = () => {
       <div className="about-content">
         <div className="about-text">
           <p>
-            Hello! I'm **[Your Name]**, a passionate developer based in [Your City, Country]. My journey into web development began [Year or Event], and since then, I've been dedicated to building clean, functional, and user-centric digital experiences.
+            I am an <strong>AI & Machine Learning Engineer</strong> and Master’s student at <strong>Deggendorf Institute of Technology</strong>. Bridging the gap between hardware and intelligence, I specialize in building scalable models that solve real-world problems.
+          </p>
+          
+          <p>
+            My technical focus lies in the <strong>Python ecosystem</strong> (PyTorch, TensorFlow) for NLP and Computer Vision. I don't just train models; I fine-tune them to turn raw complex data into actionable business insights.
           </p>
           <p>
-            I recently completed [Your Degree/Bootcamp/Major Project], where I honed my skills in the **MERN stack (MongoDB, Express, React, Node.js)**. I thrive on collaborating with cross-functional teams and translating complex ideas into elegant code solutions.
+            When I'm not coding, you'll find me gaming, playing football, or exploring the latest tech trends. 
+            Currently open to opportunities where I can push the boundaries of AI.
           </p>
-          <p>
-            When I'm not coding, you can find me [Hobby 1, e.g., learning about cybersecurity] or [Hobby 2, e.g., hiking in the mountains]. I'm currently looking for opportunities where I can contribute my frontend expertise and continue growing as a developer.
-          </p>
+          {/* New "Catchy" Visual Highlights Section */}
+          <div className="about-highlights">
+            <div className="highlight-item">
+              <span className="highlight-icon">🎓</span>
+              <span>Master's in CS</span>
+            </div>
+            <div className="highlight-item">
+              <span className="highlight-icon">🤖</span>
+              <span>LLM & NLP Specialist</span>
+            </div>
+            <div className="highlight-item">
+              <span className="highlight-icon">⚽</span>
+              <span>Football Enthusiast</span>
+            </div>
+          </div>
         </div>
-        {/* Optional: Add a profile image or a visual timeline graphic here */}
-        {/* [Image of a clean, modern illustration of a person reviewing code on a multi-screen setup] */}
       </div>
     </section>
   );

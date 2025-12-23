@@ -1,11 +1,18 @@
 import React from 'react';
 
 const Footer = () => {
-  // We use JavaScript to get the current year dynamically
-  const currentYear = new Date().getFullYear(); 
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer>
-      <p>&copy; {currentYear} [Your Full Name]. All rights reserved. Built with React and CSS.</p>
+    <footer className="footer">
+      <div className="footer-content">
+        <p>
+          &copy; {currentYear} Loay Berzan. All rights reserved.
+        </p>
+        <p className="footer-credit">
+          Designed & Built with <span className="heart">💙</span> and React
+        </p>
+      </div>
     </footer>
   );
 };

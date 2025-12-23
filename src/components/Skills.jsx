@@ -1,25 +1,48 @@
 import React from 'react';
-// import './Skills.css'; 
 
 const skillsData = [
   { 
-    category: "Frontend Development", 
-    items: ["HTML5", "CSS3 / SCSS", "JavaScript (ES6+)", "React", "Redux/Context API", "Responsive Design"] 
+    // The "Star" Category - Put this first!
+    category: "🤖 Machine Learning & AI", 
+    items: [
+      "Python", 
+      "PyTorch / TensorFlow", 
+      "Large Language Models (LLMs)", 
+      "Computer Vision (OpenCV)", 
+      "Scikit-learn", 
+      "Hugging Face Transformers"
+    ] 
   },
   { 
-    category: "Backend & Databases", 
-    items: ["Node.js", "Express", "Python / Django", "MongoDB", "PostgreSQL", "REST APIs"] 
+    // The "Data" Category
+    category: "📊 Data Science & Analytics", 
+    items: [
+      "Pandas / NumPy", 
+      "SQL / PostgreSQL", 
+      "Data Visualization (Matplotlib)", 
+      "Data Cleaning & Preprocessing",
+      "Jupyter Notebooks",
+      "RAG Pipelines"
+    ] 
   },
   { 
-    category: "Tools & Workflow", 
-    items: ["Git / GitHub", "VS Code", "Webpack / Vite", "Figma", "Docker (Basic)", "Agile/Scrum"] 
+    // The "Full Stack" skills, rebranded for AI
+    category: "🚀 Deployment & MLOps", 
+    items: [
+      "Docker / Containers", 
+      "FastAPI / Flask", // Essential for serving AI models
+      "Git / GitHub", 
+      "React.js", // Good to keep, shows you can build demos
+      "Cloud Basics (AWS/GCP)", 
+      "REST APIs"
+    ] 
   },
 ];
 
 const Skills = () => {
   return (
     <section className="section skills" id="skills">
-      <h2>💻 My Skills & Tools</h2>
+      <h2>💻 My Skills & Tech Stack</h2>
       <div className="skills-container">
         {skillsData.map((group, index) => (
           <div key={index} className="skill-group">
@@ -32,7 +55,6 @@ const Skills = () => {
           </div>
         ))}
       </div>
-       {/*  */}
     </section>
   );
 };

@@ -105,7 +105,7 @@ body.dark .header {
 
 /* 5. SECTIONS & LAYOUT */
 .section {
-  padding: 5rem 5%;
+  padding: 3rem 5%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -113,7 +113,7 @@ body.dark .header {
 h2 {
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   color: var(--text-primary);
   position: relative;
 }
@@ -130,13 +130,6 @@ h2::after {
 }
 
 /* 6. HERO SECTION (Centered & Big) */
-.hero {
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
 
 .hero h1 {
   font-size: 3.5rem;
@@ -159,6 +152,12 @@ h2::after {
 .hero-actions {
   display: flex;
   gap: 1rem;
+}
+.description{
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 700px;
 }
 
 .cta-button {
@@ -214,6 +213,40 @@ h2::after {
   border-bottom: 1px solid rgba(0,0,0,0.05);
   color: var(--text-secondary);
 }
+
+/* --- Skills Section Updates --- */
+
+.skill-group ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  gap: 10px;       /* Space between tags */
+  margin-top: 15px;
+}
+
+.skill-group ul li {
+  /* Turn list items into "Tags" */
+  background: rgba(99, 102, 241, 0.1); /* Light tint of your accent color */
+  color: var(--accent-color);
+  padding: 8px 16px;
+  border-radius: 50px; /* Pill shape */
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  
+  /* Remove old border-bottom styles if you have them */
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2); 
+}
+
+/* Hover effect for fun */
+.skill-group ul li:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
 
 /* 8. PORTFOLIO (Cards with Hover) */
 .portfolio-grid {
@@ -277,26 +310,229 @@ h2::after {
   color: var(--accent-color);
 }
 
-/* 9. CONTACT */
+/* 9. CONTACT CONTAINER */
+/* 1. CONTAINER FOR SOCIAL LINKS */
+/* This aligns Email, LinkedIn, and GitHub */
 .contact-links-container {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;       /* Space between social buttons */
+  flex-wrap: wrap;   /* Wraps on small screens */
+  margin-bottom: 2rem; /* Space between socials and the resume button below */
 }
 
+/* 2. SOCIAL BUTTONS (Email, LinkedIn, GitHub) */
+/* Targets <a className="contact-link"> */
 .contact-link {
-  background: var(--bg-secondary);
-  padding: 1rem 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--card-shadow);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text if you uncomment icons */
+  
+  /* Dark Card Look */
+  background-color: #1e293b; /* Dark Navy/Slate */
+  color: #e2e8f0;            /* Light Grey-White text */
+  padding: 0.8rem 2rem;
+  border-radius: 12px;       /* Slightly rounded corners */
   font-weight: 600;
-  color: var(--text-primary);
+  text-decoration: none;
+  
+  /* Border & Shadow */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
 .contact-link:hover {
-  background: var(--accent-color);
-  color: #fff;
-  transform: translateY(-5px);
+  background-color: #334155; /* Lighter on hover */
+  transform: translateY(-3px);
+  color: #ffffff;
+}
+.contact-intro{
+  margin-bottom: 2.5rem;
+}
+/* 3. RESUME BUTTON (Download Resume) */
+/* Targets <a className="cta-button primary resume-button"> */
+.resume-button {
+  display: inline-block;
+  
+  /* The Glowing Gradient Pill Look */
+  background: linear-gradient(90deg, #22d3ee, #0ea5e9); /* Cyan to Blue */
+  color: white;
+  padding: 1rem 2.5rem;      /* Slightly larger/bolder than socials */
+  border-radius: 50px;       /* Full Pill Shape */
+  font-weight: 700;
+  text-decoration: none;
+  
+  /* Glow Effect */
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.6);
+}
+
+/* Optional: Centering the Resume Button since it is outside the container */
+.contact {
+  text-align: center; /* Ensures the resume button stays centered */
+}
+
+/* --- Hero Image Styling --- */
+
+/* 1. Layout: Put text and image side-by-side */
+.hero {
+  display: flex;
+  flex-direction: row; /* Horizontal layout */
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-content {
+  flex: 1; /* Takes up half the space */
+}
+
+.hero-image-container {
+  flex: 1; /* Takes up the other half */
+  display: flex;
+  justify-content: center; /* Centers image in its half */
+  align-items: center;
+}
+
+/* 2. The Image Itself */
+.hero-img {
+  width: 320px;       /* Adjust size as needed */
+  height: 320px;
+  object-fit: cover;  /* Prevents stretching if image isn't square */
+  border-radius: 50%; /* Makes it a circle */
+  
+  /* Modern styling */
+  border: 4px solid var(--accent-color);
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.4); /* Glow effect */
+  
+  /* Optional: Floating Animation */
+  animation: floatProfile 4s ease-in-out infinite;
+}
+
+/* Animation Keyframes */
+@keyframes floatProfile {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 3. Mobile Responsiveness (Stack them on small screens) */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse; /* Image on top, text on bottom */
+    text-align: center;
+    padding-top: 2rem; /* Add some space at top */
+  }
+
+  .hero-img {
+    width: 220px; /* Smaller image on mobile */
+    height: 220px;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-actions {
+    justify-content: center; /* Center buttons on mobile */
+  }
+}
+
+/* Update .about-text to be Justified */
+.about-text {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  
+  /* The alignment you asked for */
+  text-align: justify; 
+  text-justify: inter-word; /* Improves spacing in justified text */
+}
+
+.about-text p {
+  margin-bottom: 2rem;
+}
+
+/* New Highlight Box Styling */
+.about-highlights {
+  display: flex;
+  justify-content: space-around; /* Spreads items evenly */
+  align-items: center;
+  margin-top: 30px;
+  padding: 20px;
+  background: var(--bg-primary); /* Slightly different background from card */
+  border-radius: 12px;
+  border: 1px solid rgba(99, 102, 241, 0.2); /* Subtle colored border */
+}
+
+.highlight-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  gap: 10px;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.highlight-icon {
+  font-size: 2rem; /* Big emojis/icons */
+  margin-bottom: 5px;
+}
+
+/* Mobile: Stack highlights vertically if screen is too small */
+@media (max-width: 600px) {
+  .about-highlights {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* FOOTER CONTAINER */
+.footer {
+  background-color: #0b1121;  /* Matches your main background */
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle separator line */
+  margin-top: auto; /* Pushes footer to bottom if page content is short */
+}
+
+/* TEXT STYLING */
+.footer p {
+  color: #64748b; /* Muted Slate Grey - softer than white */
+  font-size: 0.9rem;
+  margin: 5px 0;
+  font-weight: 400;
+}
+
+/* CREDIT LINE (Optional) */
+.footer-credit {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* HEART ANIMATION (Just for fun) */
+.heart {
+  display: inline-block;
+  color: #0ea5e9; /* Matches your blue accent */
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem;
+  }
 }

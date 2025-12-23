@@ -4,28 +4,28 @@ import React from 'react';
 const projects = [
   {
     id: 1,
-    title: "E-commerce Redesign",
-    description: "A full-stack e-commerce site with user authentication, a shopping cart, and a built-in payment gateway. Built using the MERN stack.",
-    technologies: ["React", "Node.js", "MongoDB", "Redux", "Stripe"],
-    liveUrl: "https://[live-demo-1].com",
-    githubUrl: "https://github.com/[repo-1]"
+    title: "German Traffic Sign AI Recognition",
+    description: "An end-to-end Computer Vision app that uses a custom CNN to classify 43 types of German traffic signs with real-time deployment on Streamlit.",
+    technologies: ["Python", "TensorFlow", "Keras", "OpenCV", "Streamlit"],
+    liveUrl: "https://traffic-sign-recognizergit-hzyappvcpygdvkykdmtgeyp.streamlit.app/",
+    githubUrl: "https://github.com/loayasser/Traffic-Sign-Recognizer"
   },
-  {
-    id: 2,
-    title: "Task Management App",
-    description: "A minimalist To-Do application featuring drag-and-drop task reordering and local storage persistence.",
-    technologies: ["React", "JavaScript", "Styled Components", "Vite"],
-    liveUrl: "https://[live-demo-2].com",
-    githubUrl: "https://github.com/[repo-2]"
-  },
-  {
-    id: 3,
-    title: "Weather Dashboard",
-    description: "A real-time weather application that fetches data from a public API and displays a 5-day forecast for any major city.",
-    technologies: ["Vanilla JS", "HTML5", "CSS Grid", "OpenWeatherMap API"],
-    liveUrl: "https://[live-demo-3].com",
-    githubUrl: "https://github.com/[repo-3]"
-  },
+  // {
+  //   id: 2,
+  //   title: "Task Management App",
+  //   description: "A minimalist To-Do application featuring drag-and-drop task reordering and local storage persistence.",
+  //   technologies: ["React", "JavaScript", "Styled Components", "Vite"],
+  //   liveUrl: "https://[live-demo-2].com",
+  //   githubUrl: "https://github.com/[repo-2]"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Weather Dashboard",
+  //   description: "A real-time weather application that fetches data from a public API and displays a 5-day forecast for any major city.",
+  //   technologies: ["Vanilla JS", "HTML5", "CSS Grid", "OpenWeatherMap API"],
+  //   liveUrl: "https://[live-demo-3].com",
+  //   githubUrl: "https://github.com/[repo-3]"
+  // },
 ];
 
 const Portfolio = () => {

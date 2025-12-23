@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <a href="#hero" className="logo">My Portfolio</a>
+      <a href="#hero" className="logo">Loay Berzan</a>
       <nav className="navbar">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>

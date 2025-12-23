@@ -1,4 +1,5 @@
 import React from 'react';
+import Resume from '../assets/Resume.pdf';
 // You might use an icon library here, e.g., react-icons
 // import { FiMail, FiLinkedin, FiGithub } from 'react-icons/fi';
 
@@ -7,12 +8,12 @@ const Contact = () => {
     <section className="section contact" id="contact">
       <h2>✉️ Get In Touch</h2>
       <p className="contact-intro">
-        I am currently open to new opportunities and projects. Whether you have a question or just want to connect, feel free to reach out—my inbox is always open!
+        I am currently open to new opportunities and projects. Whether you have a question or just want to connect, feel free to reach out, my inbox is always open!
       </p>
 
       <div className="contact-links-container">
         <a 
-          href="mailto:youremail@example.com" 
+          href="mailto:loay.berzan@gmail.com" 
           className="contact-link"
           aria-label="Email me"
         >
@@ -20,7 +21,7 @@ const Contact = () => {
           Email Me
         </a>
         <a 
-          href="[YOUR_LINKEDIN_URL]" 
+          href="https://www.linkedin.com/in/loay-berzan/" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="contact-link"
@@ -30,7 +31,7 @@ const Contact = () => {
           LinkedIn
         </a>
         <a 
-          href="[YOUR_GITHUB_URL]" 
+          href="https://github.com/loayasser" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="contact-link"
@@ -42,12 +43,13 @@ const Contact = () => {
       </div>
 
       <a 
-        href="[LINK_TO_YOUR_RESUME.pdf]" 
-        target="_blank" 
-        rel="noopener noreferrer" 
+        href={Resume} 
+        target="_blank"             // Opens in new tab
+        rel="noopener noreferrer"   // Security best practice for new tabs
         className="cta-button primary resume-button"
+        // REMOVE the 'download' attribute completely
       >
-        Download Resume
+        View Resume
       </a>
     </section>
   );
