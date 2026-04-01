@@ -73,10 +73,17 @@ body.dark .header {
   font-weight: 700;
   color: var(--accent-color);
   letter-spacing: -0.5px;
+  position: relative;
+  z-index: 1002;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .navbar a {
-  margin-left: 2rem;
   font-weight: 500;
   color: var(--text-primary);
   transition: color 0.2s;
@@ -92,7 +99,6 @@ body.dark .header {
   color: var(--text-primary);
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  margin-left: 20px;
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -101,6 +107,50 @@ body.dark .header {
 .theme-toggle-btn:hover {
   border-color: var(--accent-color);
   color: var(--accent-color);
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(113, 128, 150, 0.4);
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1002;
+}
+
+.menu-line {
+  width: 18px;
+  height: 2px;
+  border-radius: 4px;
+  background: var(--text-primary);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.menu-toggle.is-open .menu-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.is-open .menu-line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.is-open .menu-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  border: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 998;
 }
 
 /* 5. SECTIONS & LAYOUT */
@@ -251,8 +301,8 @@ h2::after {
 /* 8. PORTFOLIO (Cards with Hover) */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .project-card {
@@ -279,17 +329,23 @@ h2::after {
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
+  min-height: 72px;
+}
+
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.25rem;
 }
 
 .tech-tag {
-  display: inline-block;
+  display: inline-flex;
   background: rgba(99, 102, 241, 0.1); /* Light transparent background */
   color: var(--accent-color);
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 0.8rem;
-  margin-right: 8px;
-  margin-bottom: 8px;
   font-weight: 600;
 }
 
@@ -302,12 +358,84 @@ h2::after {
 .link-button {
   font-size: 0.9rem;
   font-weight: 600;
-  text-decoration: underline;
+  text-decoration: none;
+  border: 1px solid rgba(113, 128, 150, 0.35);
+  border-radius: 999px;
+  padding: 0.5rem 0.9rem;
   cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .link-button:hover {
   color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(78vw, 320px);
+    background: var(--bg-secondary);
+    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+    padding: 6rem 1.5rem 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .navbar.open {
+    transform: translateX(0);
+  }
+
+  .navbar a,
+  .theme-toggle-btn {
+    width: 100%;
+  }
+
+  .theme-toggle-btn {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 2.5rem 1.1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 1.25rem;
+  }
+
+  .project-description {
+    min-height: auto;
+  }
+
+  .project-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .link-button {
+    text-align: center;
+  }
 }
 
 /* 9. CONTACT CONTAINER */
